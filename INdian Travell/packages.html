@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages | Indian Travels</title>
+    <link rel="stylesheet" href="web2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 36px;
+        }
+        .package-card {
+            background: rgba(255,255,255,0.96);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 56px rgba(0,0,0,0.16);
+        }
+        .package-card img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            display: block;
+        }
+        .package-card .caption {
+            padding: 22px 20px 24px;
+        }
+        .package-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            color: var(--ink);
+        }
+        .package-card p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        .section-intro {
+            max-width: 760px;
+            margin: 0 auto 18px;
+            text-align: center;
+        }
+        .section-intro p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: #6b5744;
+            line-height: 1.8;
+        }
+        .nav1 .right a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav class="nav1">
+        <div class="left">
+            <h1>Indian Travels</h1>
+        </div>
+        <div class="right">
+            <a href="web2.html"><i>Home</i></a>
+            <a href="packages.html"><i>Packages</i></a>
+            <a href="contact.html"><i>Contact</i></a>
+        </div>
+    </nav>
+    <nav class="nav2">
+        <div class="hy">
+            <div class="hi">Packages Crafted for Every Indian Journey</div>
+            <div class="many">From cultural festivals to luxury train escapes</div>
+            <div class="any"><a href="contact.html"><button>Contact us</button></a></div>
+            <div class="chair"><a href="web2.html"><button>Back to home</button></a></div>
+        </div>
+    </nav>
+    <nav class="nav3">
+        <div class="bench">
+            <div class="table">Our Best Packages</div>
+            <div class="section-intro">
+                <p>Choose from a selection of immersive India packages, designed for first-time travelers, luxury seekers, festival lovers and culture explorers.</p>
+            </div>
+            <div class="picture package-grid">
+                <div class="package-card">
+                    <img src="taj_new_contant_edited.jpg" alt="Golden Triangle Package">
+                    <div class="caption">
+                        <h3>Golden Triangle</h3>
+                        <p>6 days through Delhi, Agra, and Jaipur with iconic monuments, royal palaces and timeless culture.</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="Kerala-Tour-India-Tour-India-Travel.webp" alt="Kerala Backwaters Package">
+                    <div class="caption">
+                        <h3>Kerala Backwaters</h3>
+                        <p>5 days of houseboat stays, spice island tours and serene backwater cruises in God’s Own Country.</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="images.jpg" alt="Rajasthan Festival Tour">
+                    <div class="caption">
+                        <h3>Rajasthan Festival Tour</h3>
+                        <p>Experience Udaipur, Jaisalmer and Pushkar with palace stays, desert camps and vibrant local celebrations.</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="Ladakh-Tour-India-Tour-India-Travel.webp" alt="Himalayan Retreat Package">
+                    <div class="caption">
+                        <h3>Himalayan Retreat</h3>
+                        <p>7 days of mountain lodges, sunrise views and peaceful hill station escapes across the north.</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <img src="Karnataka-Tour-India-Tour-India-Travel.webp" alt="South India Cultural Tour">
+                    <div class="caption">
+                        <h3>South India Splendor</h3>
+                        <p>Explore temples, tea estates, coastal towns and rich culinary traditions from Chennai to Kochi.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+    <nav class="nav4">
+        <div class="home">
+            <div class="tone">Featured Package of the Month</div>
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80" alt="Featured India package">
+        </div>
+    </nav>
+    <nav class="nav5">
+        <div class="X">
+            <div class="one">Luxury Train and Palace Stays</div>
+            <div class="two">
+                <img src="Maharajas-Express-Train-in-India.webp" alt="Maharajas Express">
+                <img src="Palace-on-Wheels-Train-in-India.webp" alt="Palace on Wheels">
+                <img src="The-Golden-Chariot-Train.webp" alt="Golden Chariot train">
+                <img src="Palace-on-Wheels-Train-in-India (1).webp" alt="Luxury train interior">
+            </div>
+        </div>
+    </nav>
+    <footer>
+        <div>
+            <h1>INDIAN TRAVELS</h1>
+            <h2>IndiaTravel is a gateway of information and services for travelers who want to get to know India a little bit better</h2>
+        </div>
+        <div>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-whatsapp"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-snapchat"></i>
+            <p><br>Design by Harit Chauhan</p>
+        </div>
+        <div>
+            <p>@2025 Copyright All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

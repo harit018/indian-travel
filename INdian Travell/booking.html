@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Train Booking — Indian Travels</title>
+  <link rel="stylesheet" href="web2.css">
+  <style>
+    .booking-hero {
+      min-height: 50vh;
+      padding: 80px 5% 60px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, rgba(26,18,11,0.76) 0%, rgba(26,18,11,0.32) 60%, rgba(200,151,42,0.14) 100%),
+        url('Palace-on-Wheels-Train-in-India.webp') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .booking-hero__copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .booking-hero__copy p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.92);
+      max-width: 600px;
+    }
+
+    .booking-container {
+      max-width: 1200px;
+      margin: -40px auto 0;
+      padding: 0 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .booking-form-wrapper {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 20px 50px rgba(26,18,11,0.18);
+      padding: 50px;
+    }
+
+    .form-section {
+      margin-bottom: 40px;
+    }
+
+    .form-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(200,151,42,0.2);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px;
+      border: 1px solid #d0bea8;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--ink);
+      transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(200,151,42,0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .train-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .train-option {
+      padding: 18px;
+      border: 2px solid #e0d0c0;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+    .train-option:hover {
+      border-color: var(--gold);
+      background: #fffaf5;
+    }
+
+    .train-option input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .train-option label {
+      cursor: pointer;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .cabin-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cabin-option {
+      padding: 16px;
+      border: 2px solid #e0d0c0;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cabin-option:hover {
+      border-color: var(--gold);
+      background: #fffbf7;
+    }
+
+    .cabin-option input[type="radio"] {
+      display: none;
+    }
+
+    .cabin-option input[type="radio"]:checked + .cabin-label {
+      color: var(--gold);
+    }
+
+    .cabin-label {
+      display: block;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .cabin-price {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .booking-summary {
+      background: linear-gradient(135deg, #fff8f0 0%, #fef2e8 100%);
+      border-radius: 16px;
+      padding: 32px;
+      border: 1px solid rgba(200,151,42,0.18);
+      margin-bottom: 32px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .summary-row strong {
+      color: var(--ink);
+    }
+
+    .summary-total {
+      border-top: 2px solid rgba(200,151,42,0.3);
+      padding-top: 14px;
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .form-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .btn-submit {
+      padding: 16px 28px;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(200,151,42,0.35);
+    }
+
+    .btn-cancel {
+      padding: 16px 28px;
+      border: 2px solid #d0bea8;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cancel:hover {
+      border-color: var(--muted);
+      background: rgba(26,18,11,0.04);
+    }
+
+    @media (max-width: 768px) {
+      .booking-form-wrapper {
+        padding: 30px;
+      }
+
+      .form-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-hero {
+        padding: 60px 5% 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="booking-hero">
+    <div class="booking-hero__copy">
+      <h1>Book Your Luxury Train Journey</h1>
+      <p>Reserve your seat on India's most prestigious trains and embark on an unforgettable travel experience.</p>
+    </div>
+  </header>
+
+  <div class="booking-container">
+    <form class="booking-form-wrapper" id="booking-form">
+      <!-- Passenger Information -->
+      <section class="form-section">
+        <h2 class="form-section-title">Passenger Information</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first-name" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last-name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="nationality">Nationality *</label>
+            <input type="text" id="nationality" name="nationality" required>
+          </div>
+          <div class="form-group">
+            <label for="passport">Passport Number</label>
+            <input type="text" id="passport" name="passport">
+          </div>
+        </div>
+      </section>
+
+      <!-- Train Selection -->
+      <section class="form-section">
+        <h2 class="form-section-title">Select Your Train *</h2>
+        <div class="train-options">
+          <div class="train-option">
+            <input type="radio" id="palace-wheels" name="train" value="palace-wheels" required>
+            <label for="palace-wheels">Palace on Wheels</label>
+            <p style="font-size: 0.85rem; color: var(--muted); margin: 6px 0 0;">7 nights | ₹2,50,000</p>
+          </div>
+          <div class="train-option">
+            <input type="radio" id="maharajas" name="train" value="maharajas">
+            <label for="maharajas">Maharajas Express</label>
+            <p style="font-size: 0.85rem; color: var(--muted); margin: 6px 0 0;">8-9 nights | ₹3,50,000</p>
+          </div>
+          <div class="train-option">
+            <input type="radio" id="golden-chariot" name="train" value="golden-chariot">
+            <label for="golden-chariot">The Golden Chariot</label>
+            <p style="font-size: 0.85rem; color: var(--muted); margin: 6px 0 0;">7-8 nights | ₹2,80,000</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Travel Dates -->
+      <section class="form-section">
+        <h2 class="form-section-title">Travel Dates</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="departure">Departure Date *</label>
+            <input type="date" id="departure" name="departure" required>
+          </div>
+          <div class="form-group">
+            <label for="passengers">Number of Passengers *</label>
+            <select id="passengers" name="passengers" required>
+              <option value="">Select number</option>
+              <option value="1">1 Passenger</option>
+              <option value="2">2 Passengers</option>
+              <option value="3">3 Passengers</option>
+              <option value="4">4 Passengers</option>
+              <option value="5">5+ Passengers</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cabin Selection -->
+      <section class="form-section">
+        <h2 class="form-section-title">Select Cabin Type *</h2>
+        <div class="cabin-options">
+          <label class="cabin-option">
+            <input type="radio" name="cabin" value="standard" required>
+            <span class="cabin-label">Standard Suite</span>
+            <div class="cabin-price">₹2,50,000</div>
+          </label>
+          <label class="cabin-option">
+            <input type="radio" name="cabin" value="deluxe">
+            <span class="cabin-label">Deluxe Suite</span>
+            <div class="cabin-price">₹3,20,000</div>
+          </label>
+          <label class="cabin-option">
+            <input type="radio" name="cabin" value="presidential">
+            <span class="cabin-label">Presidential Suite</span>
+            <div class="cabin-price">₹5,00,000</div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Additional Preferences -->
+      <section class="form-section">
+        <h2 class="form-section-title">Additional Preferences</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="dietary">Dietary Requirements</label>
+            <select id="dietary" name="dietary">
+              <option value="">None</option>
+              <option value="veg">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="halal">Halal</option>
+              <option value="gluten-free">Gluten-Free</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="special-requests">Special Requests</label>
+            <textarea id="special-requests" name="special-requests" placeholder="Anniversary celebration, medical needs, etc."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Summary -->
+      <div class="booking-summary">
+        <h3 style="margin-top: 0; font-family: 'Playfair Display', serif; font-size: 1.4rem;">Booking Summary</h3>
+        <div class="summary-row">
+          <strong>Train:</strong>
+          <span id="summary-train">—</span>
+        </div>
+        <div class="summary-row">
+          <strong>Cabin Type:</strong>
+          <span id="summary-cabin">—</span>
+        </div>
+        <div class="summary-row">
+          <strong>Departure Date:</strong>
+          <span id="summary-date">—</span>
+        </div>
+        <div class="summary-row">
+          <strong>Passengers:</strong>
+          <span id="summary-passengers">—</span>
+        </div>
+        <div class="summary-total">
+          <strong>Total Cost:</strong>
+          <span>₹<span id="summary-total">0</span></span>
+        </div>
+      </div>
+
+      <!-- Form Actions -->
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Complete Booking</button>
+        <button type="reset" class="btn-cancel">Clear Form</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const cabinPrices = {
+      standard: 250000,
+      deluxe: 320000,
+      presidential: 500000
+    };
+
+    const trainLabels = {
+      'palace-wheels': 'Palace on Wheels',
+      'maharajas': 'Maharajas Express',
+      'golden-chariot': 'The Golden Chariot'
+    };
+
+    function getPassengerCount() {
+      const passengers = document.getElementById('passengers').value;
+      return passengers ? Number(passengers) : 0;
+    }
+
+    function formatRupees(amount) {
+      return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    function updateSummary() {
+      const train = document.querySelector('input[name="train"]:checked');
+      const cabin = document.querySelector('input[name="cabin"]:checked');
+      const date = document.getElementById('departure').value;
+      const passengerCount = getPassengerCount();
+
+      document.getElementById('summary-train').textContent = train ? trainLabels[train.value] : '—';
+      document.getElementById('summary-cabin').textContent = cabin ? cabin.nextElementSibling.textContent : '—';
+      document.getElementById('summary-date').textContent = date || '—';
+      document.getElementById('summary-passengers').textContent = passengerCount ? passengerCount + ' Passenger(s)' : '—';
+
+      let total = 0;
+      if (cabin && passengerCount) {
+        total = cabinPrices[cabin.value] * passengerCount;
+      }
+
+      document.getElementById('summary-total').textContent = formatRupees(total);
+    }
+
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('first-name').value;
+      alert('Thank you, ' + firstName + '! Your booking has been submitted. We will contact you soon with confirmation details.');
+      this.reset();
+      updateSummary();
+    });
+
+    document.querySelectorAll('input[name="train"], input[name="cabin"], #departure, #passengers').forEach(el => {
+      el.addEventListener('change', updateSummary);
+    });
+
+    updateSummary();
+  </script>
+</body>
+</html>

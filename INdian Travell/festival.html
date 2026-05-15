@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Travels — Festival Specials</title>
+  <link rel="stylesheet" href="festival.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c8972a;
+  --gold-light: #e8ba55;
+  --cream: #f9f0e2;
+  --ink: #1a120b;
+  --muted: #6b5744;
+  --white: #ffffff;
+  --shadow: 0 12px 30px rgba(26,18,11,0.15);
+  --radius: 18px;
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(180deg, #fdf6ec 0%, #f4e6d5 100%);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.festival-hero {
+  min-height: 70vh;
+  padding: 90px 6% 80px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, rgba(26,18,11,0.74) 0%, rgba(26,18,11,0.30) 60%, rgba(200,151,42,0.12) 100%),
+    url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1600&q=80') center/cover no-repeat;
+  color: var(--white);
+}
+
+.festival-hero__copy {
+  max-width: 700px;
+}
+
+.festival-hero__copy span {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.festival-hero__copy h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.festival-hero__copy p {
+  max-width: 620px;
+  margin-bottom: 32px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.92);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.18);
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
+.festival-main {
+  padding: 70px 6% 90px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.festival-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.festival-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.festival-title p {
+  color: var(--muted);
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.festival-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.festival-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.festival-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(26,18,11,0.16);
+}
+
+.festival-card img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.festival-card__content {
+  padding: 28px;
+}
+
+.festival-card__content h3 {
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.festival-card__content p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.festival-card__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  color: var(--ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.festival-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.festival-info article {
+  background: rgba(255,255,255,0.96);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.festival-info h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 16px;
+  font-size: 1.9rem;
+}
+
+.festival-info p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.festival-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.festival-item {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fff5e6;
+  border: 1px solid rgba(200,151,42,0.18);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.festival-footer {
+  padding: 42px 6% 60px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .festival-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .festival-hero {
+    padding: 60px 5% 50px;
+  }
+
+  .festival-hero__copy h1 {
+    font-size: 2.4rem;
+  }
+
+  .festival-card img {
+    height: 210px;
+  }
+}
+
+</style>
+<body>
+  <header class="festival-hero">
+    <div class="festival-hero__copy">
+      <span>Festival Special Tours</span>
+      <h1>Celebrate India's most vibrant festivals in style</h1>
+      <p>Join our curated festival tour packages to experience colourful processions, sacred rituals, and unforgettable cultural moments across India.</p>
+      <a class="btn-secondary" href="packages.html">Explore package deals</a>
+    </div>
+  </header>
+
+  <main class="festival-main">
+    <section class="festival-title">
+      <h2>Special festival journeys</h2>
+      <p>From Holi colours in Rajasthan to Diwali lights in Varanasi, experience India at its most celebratory with handpicked tours for each season.</p>
+    </section>
+
+    <section class="festival-cards">
+      <article class="festival-card">
+        <img src="images.jpg" alt="Holi Festival colours">
+        <div class="festival-card__content">
+          <h3>Holi in Jaipur</h3>
+          <p>Celebrate the festival of colours in a royal Rajasthan city with palace views, street performances, and local cuisine.</p>
+          <a class="festival-card__cta" href="packages.html">Book now</a>
+        </div>
+      </article>
+
+      <article class="festival-card">
+        <img src="Karnataka-Tour-India-Tour-India-Travel.webp" alt="Diwali celebrations in India">
+        <div class="festival-card__content">
+          <h3>Diwali in Varanasi</h3>
+          <p>Witness the Ganges lit by thousands of diyas, attend temple ceremonies, and explore the spiritual heart of India.</p>
+          <a class="festival-card__cta" href="packages.html">Book now</a>
+        </div>
+      </article>
+
+      <article class="festival-card">
+        <img src="Rishikesh-best-places-to-visit-in-india.webp" alt="Navratri dance celebration">
+        <div class="festival-card__content">
+          <h3>Navratri in Gujarat</h3>
+          <p>Dance through nine nights of Garba and Dandiya, enjoy traditional feasts, and discover local craftsmanship.</p>
+          <a class="festival-card__cta" href="packages.html">Book now</a>
+        </div>
+      </article>
+
+      <article class="festival-card">
+        <img src="Ladakh-Tour-India-Tour-India-Travel.webp" alt="Pushkar camel festival">
+        <div class="festival-card__content">
+          <h3>Pushkar Camel Fair</h3>
+          <p>Explore the colourful desert fair with camel shows, folk performances, and a unique rural Rajasthani atmosphere.</p>
+          <a class="festival-card__cta" href="packages.html">Book now</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="festival-info">
+      <article>
+        <h3>Why choose festival tours?</h3>
+        <p>Festival travel offers deeper cultural immersion, exclusive access to local celebrations, and a chance to see India through the eyes of its people.</p>
+        <div class="festival-items">
+          <span class="festival-item">Local guides</span>
+          <span class="festival-item">Small groups</span>
+          <span class="festival-item">Cultural workshops</span>
+          <span class="festival-item">Festival highlights</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Book with confidence</h3>
+        <p>Our packages are timed to the festival calendar and include carefully selected hotels, secure transport, and comfortable itineraries prepared for the festive season.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="festival-footer">
+    <p>Need help choosing a festival itinerary? Contact us to create a special celebration tour tailored to your travel dates.</p>
+  </footer>
+</body>
+</html>

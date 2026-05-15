@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Travels — Luxury Trains</title>
+  <link rel="stylesheet" href="web2.css">
+  <style>
+    .train-hero {
+      min-height: 70vh;
+      padding: 90px 5% 70px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, rgba(26,18,11,0.76) 0%, rgba(26,18,11,0.32) 60%, rgba(200,151,42,0.14) 100%),
+        url('Palace-on-Wheels-Train-in-India.webp') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .train-hero__copy {
+      max-width: 720px;
+    }
+
+    .train-hero__copy span {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    .train-hero__copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .train-hero__copy p {
+      max-width: 620px;
+      margin-bottom: 32px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .train-section {
+      padding: 70px 5% 90px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .train-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .train-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .train-title p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .train-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .train-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(26,18,11,0.14);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .train-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(26,18,11,0.18);
+    }
+
+    .train-card img {
+      height: 260px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .train-card__body {
+      padding: 32px;
+    }
+
+    .train-card__body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .train-card__body p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .train-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .train-feature {
+      font-size: 0.9rem;
+      padding: 10px 14px;
+      background: #fff7ed;
+      border: 1px solid rgba(200,151,42,0.18);
+      border-radius: 12px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .btn-book {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--ink);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-book:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(200,151,42,0.35);
+    }
+
+    .train-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .train-highlights article {
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 34px;
+      box-shadow: 0 10px 30px rgba(26,18,11,0.14);
+    }
+
+    .train-highlights h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+
+    .train-highlights p {
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .train-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .train-benefit {
+      padding: 16px 20px;
+      background: #fff5e6;
+      border: 1px solid rgba(200,151,42,0.18);
+      border-radius: 14px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .train-footer {
+      padding: 42px 5% 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .train-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .train-hero {
+        padding: 60px 5% 50px;
+      }
+
+      .train-hero__copy h1 {
+        font-size: 2.4rem;
+      }
+
+      .train-card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="train-hero">
+    <div class="train-hero__copy">
+      <span>Luxury Rail Journey</span>
+      <h1>Travel across India in timeless elegance</h1>
+      <p>Experience the romance of rail travel aboard India's most luxurious trains with world-class dining, plush cabins, and unforgettable routes through cultural treasures.</p>
+      <a class="btn-primary" href="packages.html" style="display: inline-block; margin-top: 12px;">Explore train routes</a>
+    </div>
+  </header>
+
+  <main class="train-section">
+    <section class="train-title">
+      <h2>India's iconic luxury trains</h2>
+      <p>From the legendary Palace on Wheels to the all-inclusive Maharajas Express, each train combines heritage, comfort, and unforgettable journeys.</p>
+    </section>
+
+    <section class="train-grid">
+      <article class="train-card">
+        <img src="Palace-on-Wheels-Train-in-India.webp" alt="Palace on Wheels">
+        <div class="train-card__body">
+          <h3>Palace on Wheels</h3>
+          <p>The legendary royal train journey across Rajasthan showcasing palaces, forts, and desert landscapes.</p>
+          <div class="train-features">
+            <span class="train-feature">7 nights</span>
+            <span class="train-feature">Royal cabins</span>
+            <span class="train-feature">Fine dining</span>
+          </div>
+          <a class="btn-book" href="booking.html">Book now</a>
+        </div>
+      </article>
+
+      <article class="train-card">
+        <img src="Maharajas-Express-Train-in-India.webp" alt="Maharajas Express">
+        <div class="train-card__body">
+          <h3>Maharajas Express</h3>
+          <p>All-inclusive luxury trains exploring India's spiritual and cultural landmarks from coast to coast.</p>
+          <div class="train-features">
+            <span class="train-feature">8-9 nights</span>
+            <span class="train-feature">Luxury suites</span>
+            <span class="train-feature">All meals</span>
+          </div>
+          <a class="btn-book" href="booking.html">Book now</a>
+        </div>
+      </article>
+
+      <article class="train-card">
+        <img src="The-Golden-Chariot-Train.webp" alt="The Golden Chariot">
+        <div class="train-card__body">
+          <h3>The Golden Chariot</h3>
+          <p>Discover South India's temples, palaces, and wildlife sanctuaries with premium on-board hospitality.</p>
+          <div class="train-features">
+            <span class="train-feature">7-8 nights</span>
+            <span class="train-feature">Spacious cabins</span>
+            <span class="train-feature">Expert guides</span>
+          </div>
+          <a class="btn-book" href="booking.html">Book now</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="train-highlights">
+      <article>
+        <h3>Why choose luxury train travel?</h3>
+        <p>Luxury trains offer an unmatched travel experience combining comfort, culture, and convenience. Travel in style with gourmet dining, spacious accommodations, and curated stops at India's most treasured destinations.</p>
+        <div class="train-benefits">
+          <span class="train-benefit">Fine dining</span>
+          <span class="train-benefit">Private guides</span>
+          <span class="train-benefit">Guided tours</span>
+          <span class="train-benefit">Luxury suites</span>
+        </div>
+      </article>
+
+      <article>
+        <h3>Your journey of a lifetime</h3>
+        <p>Each luxury train journey is carefully crafted with premium amenities, personalised service, and exclusive access to heritage sites, making your Indian rail adventure truly unforgettable.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="train-footer">
+    <p>Ready to experience the magic of luxury train travel? Browse our curated packages or contact us for personalised itineraries.</p>
+  </footer>
+</body>
+</html>

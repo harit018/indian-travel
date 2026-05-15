@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Travels — Destinations</title>
+  <link rel="stylesheet" href="destination.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c8972a;
+  --gold-light: #e8ba55;
+  --cream: #f9f0e2;
+  --ink: #1a120b;
+  --muted: #65513e;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(26,18,11,0.14);
+  --radius: 18px;
+  --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(180deg, #fdf6ec 0%, #f3e0cc 100%);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.dest-hero {
+  min-height: 72vh;
+  padding: 90px 6% 70px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(160deg, rgba(26,18,11,0.72) 0%, rgba(26,18,11,0.30) 60%, rgba(200,151,42,0.14) 100%),
+    url('https://images.unsplash.com/photo-1506976785307-8732e854ad89?w=1600&q=80') center/cover no-repeat;
+  color: var(--white);
+}
+
+.dest-hero__copy {
+  max-width: 680px;
+}
+
+.dest-hero__copy span {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.dest-hero__copy h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.dest-hero__copy p {
+  max-width: 620px;
+  margin-bottom: 32px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.92);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.32);
+  background: rgba(255,255,255,0.18);
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.btn-primary:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
+.dest-main {
+  padding: 70px 6% 90px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.dest-section-title {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.dest-section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.dest-section-title p {
+  color: var(--muted);
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.dest-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.dest-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(26,18,11,0.16);
+}
+
+.dest-card img {
+  height: 240px;
+  object-fit: cover;
+}
+
+.dest-card__content {
+  padding: 26px;
+}
+
+.dest-card__content h3 {
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.dest-card__content p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.dest-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.dest-info article {
+  background: rgba(255,255,255,0.94);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.dest-info h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 18px;
+  font-size: 2rem;
+}
+
+.dest-info p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+.dest-highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pill {
+  padding: 16px 20px;
+  background: #fff7ed;
+  border-radius: 14px;
+  border: 1px solid rgba(200,151,42,0.18);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.dest-footer {
+  padding: 42px 6% 60px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .dest-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dest-hero {
+    padding: 60px 5% 50px;
+  }
+
+  .dest-hero__copy h1 {
+    font-size: 2.4rem;
+  }
+
+  .dest-card img {
+    height: 210px;
+  }
+}
+
+</style>
+<body>
+  <header class="dest-hero">
+    <div class="dest-hero__copy">
+      <span>Destinations</span>
+      <h1>Explore India's most unforgettable places</h1>
+      <p>From misty mountain retreats to royal palace journeys, discover destinations that make every Indian holiday truly memorable.</p>
+      <a class="btn-primary" href="packages.html">View tour packages</a>
+    </div>
+  </header>
+
+  <main class="dest-main">
+    <section class="dest-section-title">
+      <h2>Curated destinations for every traveller</h2>
+      <p>Choose from heritage hill stations, spiritual riverbanks, coastal retreats and luxurious train journeys, all designed for authentic Indian travel experiences.</p>
+    </section>
+
+    <section class="dest-cards">
+      <article class="dest-card">
+        <img src="Darjeeling-best-places-to-visit-in-india.webp" alt="Darjeeling tea gardens">
+        <div class="dest-card__content">
+          <h3>Darjeeling</h3>
+          <p>Wake up among tea gardens and Himalayan panorama, with colonial charm, lively bazaars, and sunrise views from Tiger Hill.</p>
+        </div>
+      </article>
+      <article class="dest-card">
+        <img src="Gangtok-best-places-to-visit-in-india.webp" alt="Gangtok mountains">
+        <div class="dest-card__content">
+          <h3>Gangtok</h3>
+          <p>Discover spiritual monasteries, scenic mountain passes, and warm Himalayan hospitality in Sikkim's peaceful capital.</p>
+        </div>
+      </article>
+      <article class="dest-card">
+        <img src="Rishikesh-best-places-to-visit-in-india.webp" alt="Rishikesh river rafting">
+        <div class="dest-card__content">
+          <h3>Rishikesh</h3>
+          <p>Blend river adventure with yoga and meditation on the banks of the Ganges, set against the foothills of the Himalayas.</p>
+        </div>
+      </article>
+      <article class="dest-card">
+        <img src="Kerala-Tour-India-Tour-India-Travel.webp" alt="Kerala backwaters">
+        <div class="dest-card__content">
+          <h3>Kerala</h3>
+          <p>Relax in lush backwaters, aromatic spice gardens, and tranquil beach resorts along India's serene southwest coast.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="dest-info">
+      <article>
+        <h3>Why choose these destinations?</h3>
+        <p>Each location is carefully selected to deliver unforgettable experiences, from cultural heritage and peaceful nature to luxury travel and adventurous escapes. Our itineraries blend comfort with authentic local discovery.</p>
+        <div class="dest-highlight">
+          <span class="pill">Heritage stays</span>
+          <span class="pill">Curated journeys</span>
+          <span class="pill">Private guides</span>
+          <span class="pill">Luxury transport</span>
+        </div>
+      </article>
+      <article>
+        <h3>Plan your trip with confidence</h3>
+        <p>Whether you want a family tour, honeymoon escape, or group adventure, our travel experts tailor every itinerary to your interests, budget, and travel dates.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="dest-footer">
+    <p>Ready to begin your Indian journey? Explore packages or contact us to customise a destination itinerary just for you.</p>
+  </footer>
+</body>
+</html>

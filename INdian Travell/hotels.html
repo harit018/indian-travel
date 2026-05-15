@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Hotel Booking — Indian Travels</title>
+  <link rel="stylesheet" href="web2.css">
+  <style>
+    .hotel-hero {
+      min-height: 60vh;
+      padding: 80px 5% 60px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, rgba(26,18,11,0.78) 0%, rgba(26,18,11,0.34) 60%, rgba(200,151,42,0.14) 100%),
+        url('Karnataka-tour-Packages-4.webp') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .hotel-hero__copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4rem);
+      margin-bottom: 16px;
+      line-height: 1.05;
+    }
+
+    .hotel-hero__copy p {
+      max-width: 620px;
+      color: rgba(255,255,255,0.94);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+    .hotel-container {
+      max-width: 1100px;
+      margin: -40px auto 60px;
+      padding: 0 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hotel-form {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 22px 50px rgba(26,18,11,0.18);
+      padding: 48px;
+    }
+
+    .hotel-form h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      margin-bottom: 24px;
+    }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hotel-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hotel-group label {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .hotel-group input,
+    .hotel-group select,
+    .hotel-group textarea {
+      padding: 14px 16px;
+      border: 1px solid #d0bea8;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .hotel-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .hotel-card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .hotel-card {
+      border: 1px solid rgba(200,151,42,0.18);
+      border-radius: 16px;
+      padding: 22px;
+      background: #fff9f2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(26,18,11,0.12);
+    }
+
+    .hotel-card h3 {
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+    }
+
+    .hotel-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .hotel-card span {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .hotel-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 30px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--ink);
+      border: none;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .hotel-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(200,151,42,0.3);
+    }
+
+    @media (max-width: 780px) {
+      .hotel-form {
+        padding: 30px;
+      }
+
+      .hotel-hero {
+        padding: 60px 5% 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hotel-hero">
+    <div class="hotel-hero__copy">
+      <span>Hotel Booking</span>
+      <h1>Book a luxury stay for your Indian journey</h1>
+      <p>Choose from premium hotels, heritage resorts, and retreat stays with curated hospitality and comfort across India.</p>
+    </div>
+  </header>
+
+  <div class="hotel-container">
+    <form class="hotel-form" id="hotel-booking-form">
+      <h2>Hotel Booking Details</h2>
+
+      <div class="hotel-grid">
+        <div class="hotel-group">
+          <label for="hotel-name">Name *</label>
+          <input type="text" id="hotel-name" name="hotel-name" required>
+        </div>
+        <div class="hotel-group">
+          <label for="hotel-email">Email *</label>
+          <input type="email" id="hotel-email" name="hotel-email" required>
+        </div>
+        <div class="hotel-group">
+          <label for="hotel-phone">Phone Number *</label>
+          <input type="tel" id="hotel-phone" name="hotel-phone" required>
+        </div>
+        <div class="hotel-group">
+          <label for="hotel-city">Destination City *</label>
+          <select id="hotel-city" name="hotel-city" required>
+            <option value="">Select city</option>
+            <option value="jaipur">Jaipur</option>
+            <option value="varanasi">Varanasi</option>
+            <option value="kerala">Kerala</option>
+            <option value="udaipur">Udaipur</option>
+            <option value="goa">Goa</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="hotel-grid">
+        <div class="hotel-group">
+          <label for="checkin">Check-in Date *</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="hotel-group">
+          <label for="checkout">Check-out Date *</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+        <div class="hotel-group">
+          <label for="rooms">Rooms *</label>
+          <select id="rooms" name="rooms" required>
+            <option value="">Select</option>
+            <option value="1">1 Room</option>
+            <option value="2">2 Rooms</option>
+            <option value="3">3 Rooms</option>
+          </select>
+        </div>
+        <div class="hotel-group">
+          <label for="guests">Guests *</label>
+          <select id="guests" name="guests" required>
+            <option value="">Select</option>
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="hotel-group" style="margin-bottom: 24px;">
+        <label for="hotel-type">Preferred Hotel Type *</label>
+        <select id="hotel-type" name="hotel-type" required>
+          <option value="">Select hotel type</option>
+          <option value="heritage">Heritage Palace</option>
+          <option value="boutique">Boutique Resort</option>
+          <option value="spa">Spa Retreat</option>
+          <option value="beach">Beachfront Hotel</option>
+        </select>
+      </div>
+
+      <div class="hotel-group" style="margin-bottom: 32px;">
+        <label for="special-notes">Special requests</label>
+        <textarea id="special-notes" name="special-notes" placeholder="Anniversary room setup, dietary preferences, etc."></textarea>
+      </div>
+
+      <div class="hotel-card-list">
+        <article class="hotel-card">
+          <h3>Luxury Heritage Stay</h3>
+          <p>Stay in a restored palace with royal rooms, heritage dining, and curated city excursions.</p>
+          <span>Perfect for cultural travellers.</span>
+        </article>
+        <article class="hotel-card">
+          <h3>Beachfront Retreat</h3>
+          <p>Relax by the coast with premium beach views, ocean-facing suites, and private dining.</p>
+          <span>Ideal for leisure breaks.</span>
+        </article>
+        <article class="hotel-card">
+          <h3>Spa & Wellness Resort</h3>
+          <p>Enjoy wellness therapies, yoga sessions, and tranquil resort grounds for full relaxation.</p>
+          <span>Great for rejuvenation journeys.</span>
+        </article>
+      </div>
+
+      <button type="submit" class="hotel-submit">Reserve Hotel</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('hotel-booking-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('hotel-name').value;
+      alert('Thank you, ' + name + '! Your hotel booking request has been received. Our team will contact you shortly.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

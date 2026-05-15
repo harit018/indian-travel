@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Travels — Pilgrimage Tours</title>
+  <link rel="stylesheet" href="web2.css">
+</head>
+<body>
+  <main class="contact-page">
+    <section class="contact-hero" style="background-image: linear-gradient(160deg, rgba(26,18,11,0.78) 0%, rgba(26,18,11,0.35) 60%, rgba(200,151,42,0.15) 100%), url('taj_new_contant_edited.jpg');">
+      <div class="contact-hero__copy">
+        <span>Pilgrimage Tours</span>
+        <h1>Journey to sacred sites across India</h1>
+        <p>Discover spiritual routes, ancient temples, and peaceful riverbank retreats with guided pilgrimage tours designed for meaningful travel.</p>
+      </div>
+    </section>
+
+    <section class="contact-panel">
+      <div class="contact-panel__inner" style="grid-template-columns: 1fr;">
+        <div class="contact-info">
+          <p class="section-label">Sacred travel</p>
+          <h2>Explore our pilgrimage packages</h2>
+          <p>From Varanasi and Rishikesh to the temples of South India, our pilgrimage tours bring rich tradition, deep cultural connection, and serene experiences together.</p>
+
+          <div class="contact-cards" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <div class="card">
+              <h3>Varanasi</h3>
+              <p>Experience the Ganges aarti, sunrise boat rides, and ancient temple rituals.</p>
+            </div>
+            <div class="card">
+              <h3>Rishikesh</h3>
+              <p>Combine yoga, meditation, and riverfront ashram stays in the yoga capital.</p>
+            </div>
+            <div class="card">
+              <h3>Taj Mahal</h3>
+              <p>Visit the iconic monument and nearby sacred sites in Agra and Mathura.</p>
+            </div>
+          </div>
+        </div>
+
+          <form id="contact-form" class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="subject">pilgrimage-message</label>
+            <input type="text" id="subject" name="subject" placeholder="Message" required>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Tell us about your ideal itinerary"></textarea>
+          </div>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-panel" style="background: #fff6e8; padding: 60px 5%;">
+      <div class="contact-panel__inner" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+        <div class="card" style="background: var(--white);">
+          <h3>Guided temple visits</h3>
+          <p>Our local guides share the meaning behind rituals, customs, and sacred spaces for an authentic pilgrimage experience.</p>
+        </div>
+        <div class="card" style="background: var(--white);">
+          <h3>Comfortable travel</h3>
+          <p>Travel between sites in comfortable transport and stay in accommodation chosen for calm, convenience, and care.</p>
+        </div>
+        <div class="card" style="background: var(--white);">
+          <h3>Spiritual immersion</h3>
+          <p>Attend meditation sessions, Ganges pujas, and festival celebrations that deepen your journey.</p>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

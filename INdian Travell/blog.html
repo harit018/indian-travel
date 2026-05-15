@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Travels Blog</title>
+  <link rel="stylesheet" href="web2.css">
+  <style>
+    .blog-hero {
+      min-height: 56vh;
+      padding: 80px 5% 60px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, rgba(26,18,11,0.74) 0%, rgba(26,18,11,0.28) 60%, rgba(200,151,42,0.12) 100%),
+        url('images.jpg') center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .blog-hero__copy h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .blog-hero__copy p {
+      max-width: 620px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.93);
+    }
+
+    .blog-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 70px 5% 90px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .blog-posts {
+      display: grid;
+      gap: 28px;
+    }
+
+    .blog-post {
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(26,18,11,0.12);
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .blog-post__content {
+      padding: 28px;
+    }
+
+    .blog-post__content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .blog-post__content p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .blog-post__meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--gold-dim);
+      font-size: 0.95rem;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .blog-sidebar {
+      display: grid;
+      gap: 24px;
+    }
+
+    .sidebar-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 14px 32px rgba(26,18,11,0.1);
+    }
+
+    .sidebar-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-card p,
+    .sidebar-card li {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .sidebar-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .sidebar-list strong {
+      color: var(--ink);
+      min-width: 20px;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(200,151,42,0.2);
+    }
+
+    @media (max-width: 980px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .blog-hero {
+        padding: 60px 5% 50px;
+      }
+
+      .blog-post img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="blog-hero">
+    <div class="blog-hero__copy">
+      <span>Travel Stories</span>
+      <h1>Discover India's unforgettable journeys</h1>
+      <p>Read curated travel guides, insider tips, and inspiring stories from across India, crafted for adventurous and luxury travellers alike.</p>
+    </div>
+  </header>
+
+  <main class="blog-main">
+    <div class="blog-grid">
+      <section class="blog-posts">
+        <article class="blog-post">
+          <img src="Darjeeling-best-places-to-visit-in-india.webp" alt="Darjeeling hills">
+          <div class="blog-post__content">
+            <h2>5 Days in Darjeeling: Tea Gardens and Mountain Views</h2>
+            <p>Experience misty mornings, colonial charm, and iconic Himalayan panoramas as you explore Darjeeling’s tea estates, monasteries, and local bazaars.</p>
+            <div class="blog-post__meta">
+              <span>Journey Guide</span>
+              <span>March 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-post">
+          <img src="Varanasi-best-places-to-visit-in-india.webp" alt="Varanasi on Ganges">
+          <div class="blog-post__content">
+            <h2>Varanasi After Dark: Ganges Aarti and Spiritual Walks</h2>
+            <p>Follow the sacred riverbanks, attend the evening aarti, and discover the heartfelt rituals that make Varanasi one of India’s most spiritual destinations.</p>
+            <div class="blog-post__meta">
+              <span>Culture Notes</span>
+              <span>February 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-post">
+          <img src="Kerala-Tour-India-Tour-India-Travel.webp" alt="Kerala backwaters">
+          <div class="blog-post__content">
+            <h2>Luxury Backwaters: A Kerala Houseboat Experience</h2>
+            <p>Glide through tranquil canals, dine on fresh seafood, and unwind in luxurious comforts as Kerala’s backwaters reveal their serene side.</p>
+            <div class="blog-post__meta">
+              <span>Luxury Travel</span>
+              <span>January 2026</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="blog-sidebar">
+        <div class="sidebar-card">
+          <h3>Latest Posts</h3>
+          <ul class="sidebar-list">
+            <li><strong>1.</strong><span>Top 10 Heritage Hotels in Rajasthan</span></li>
+            <li><strong>2.</strong><span>Guide to Indian Festival Travel</span></li>
+            <li><strong>3.</strong><span>Luxury Train Routes to Book in 2026</span></li>
+            <li><strong>4.</strong><span>Wellness Retreats Across India</span></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Travel Tips</h3>
+          <p>Pack light, book early for festivals, and choose guided experiences to make the most of your Indian journey.</p>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Need inspiration?</h3>
+          <p>Explore our recommended itineraries and discover hidden gems for luxury travel, culture, and unforgettable adventures.</p>
+          <a class="btn-secondary" href="packages.html">View packages</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
